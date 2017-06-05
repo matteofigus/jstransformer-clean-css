@@ -1,11 +1,8 @@
-# jstransformer-clean-css
+# jstransformer-uglify-css
 
-[clean-css](https://github.com/jakubpawlowicz/clean-css) support for [JSTransformers](http://github.com/jstransformers).
+When moving jade to pug, you need to rename your `uglify-css` filter to `clean-css`. If you want a smooth transition (for instance you use precompiled jade views in a cdn and want to make them work with pug too) you can use this module to ensure your `uglify-css` filters keep working when rendering with the new runtime.
 
-[![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-clean-css/master.svg)](https://travis-ci.org/jstransformers/jstransformer-clean-css)
-[![Coverage Status](https://img.shields.io/coveralls/jstransformers/jstransformer-clean-css/master.svg)](https://coveralls.io/r/jstransformers/jstransformer-clean-css?branch=master)
-[![Dependency Status](https://img.shields.io/david/jstransformers/jstransformer-clean-css/master.svg)](http://david-dm.org/jstransformers/jstransformer-clean-css)
-[![NPM version](https://img.shields.io/npm/v/jstransformer-clean-css.svg)](https://www.npmjs.org/package/jstransformer-clean-css)
+Ideally, you should use this only as migration path.
 
 ## Installation
 
@@ -14,7 +11,7 @@
 ## API
 
 ```js
-var clean = require('jstransformer')(require('jstransformer-clean-css'))
+var clean = require('jstransformer')(require('jstransformer-uglify-css'))
 
 clean.render('a { font-weight: bold; }').body
 //=> 'a{font-weight:bold;}'
